@@ -22,7 +22,7 @@ def color2_process(img, img_idx):
     res = {
         "timeUsed": 0.063, "predictions": {
             "image_"+str(img_idx): {
-                "color2": [{
+                "color": [{
                     "confidence": 0.95,
                     "label": prediction
                 }]
