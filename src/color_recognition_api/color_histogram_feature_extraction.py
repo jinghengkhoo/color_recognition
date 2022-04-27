@@ -15,7 +15,7 @@ from scipy.stats import itemfreq
 #from color_recognition_api import knn_classifier as knn_classifier
 
 
-def color_histogram_of_test_image(test_src_image):
+def color_histogram_of_test_image(test_src_image, path):
 
     # load the image
     image = test_src_image
@@ -43,7 +43,7 @@ def color_histogram_of_test_image(test_src_image):
             feature_data = red + ',' + green + ',' + blue
             # print(feature_data)
 
-    with open('test.data', 'w') as myfile:
+    with open(path, 'w') as myfile:
         myfile.write(feature_data)
 
 
