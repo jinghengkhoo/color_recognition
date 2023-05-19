@@ -17,6 +17,10 @@ def color2_process(img, img_idx):
     # get the prediction
     training_data_path = os.path.join(settings.BASE_DIR, 'demo/color_recognition/src/training.data')
     test_data_path = os.path.join(settings.BASE_DIR, 'demo/color_recognition/src/test.data')
+
+    rows, cols, _ = img.shape
+    trim_amount = int(0.2 * min(rows, cols))
+    img = img[trim_amount:-trim_amount, trim_amount:-trim_amount]
     color_histogram_feature_extraction.color_histogram_of_test_image(img, test_data_path)
     prediction = knn_classifier.main(training_data_path, test_data_path)
     res = {
